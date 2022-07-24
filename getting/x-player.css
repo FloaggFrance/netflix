@@ -1,0 +1,267 @@
+.loading-buble {
+	display: block;
+
+	position: relative;
+
+    height: 500px;
+    width: 500px;
+
+    background-color: rgba(255, 255, 255, .2);
+    z-index: 1;
+
+    animation: loading .8s infinite;
+
+    transform: scale(.0);
+    opacity: 1.0;
+
+    border-radius: 50%;
+
+    display: block;
+}
+
+@keyframes loading {
+	0%{
+		transform: scale(0.3);
+		opacity: 1.0;
+	}
+	100%{
+		transform: scale(3.0);
+		opacity: .0;
+	}
+}
+
+html {
+	background-color: black;
+}
+body {
+	display: none;
+}
+article {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.player-video {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: 100%;
+}
+
+.player-video video {
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.contenaire-screen {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	display: flex;
+	flex-direction: column;
+
+	background-color: rgba(0, 0, 0, .4);
+	transform: scale(1.6);
+	animation: SODES .4s linear;
+
+	opacity: .0;
+
+	z-index: 999;
+}
+
+.player-video .contenaire-screen {
+	display: flex;
+	transform: scale(1.0);
+	opacity: 1.0;
+	animation: SODE .4s linear;
+}
+
+@keyframes SODE {
+	0% {
+		transform: scale(1.6);
+		opacity: .0;
+	}
+	100% {
+		transform: scale(1.0);
+		opacity: 1.0;
+	}
+}
+
+@keyframes SODES {
+	0% {
+		transform: scale(1.0);
+		opacity: 1.0;
+	}
+	90% {
+		transform: scale(1.6);
+		opacity: .0;
+	}
+	100% {
+		display: none;
+	}
+}
+
+.contenaire-screen .top {
+	padding: 0 20px;
+	padding: 10px;
+	height: 25%;
+}
+.contenaire-screen .center {
+	padding: 0 20px;
+	padding: 10px;
+	height: 100%;
+
+	display: flex;
+	position: relative;
+	margin: 0;
+}
+
+.contenaire-screen .center .left,
+.contenaire-screen .center .player-play-pause-control {
+	display: flex;
+	align-items: center;
+}
+.contenaire-screen .bottom-contenaire {
+	padding: 0 20px;
+	abackground-color: rgba(20, 102, 1, .2);
+	padding: 10px;
+	height: 25%;
+
+	background-image:-webkit-linear-gradient(top, transparent 0%, rgba(var(--color-black), .8) 70%);
+	background-image:linear-gradient(to bottom, transparent 0%, rgba(var(--color-black), .8) 70%);
+}
+
+.contenaire-screen .timestamp {
+	font-size: 26px;
+	font-weight: 300;
+	color: rgba(var(--color-white));
+	margin-left: 22px;
+}
+
+
+.progress-video {
+	position: relative;
+
+	background-color: rgba(230, 230, 230, .1);
+	height: 4px;
+	width: 100%;
+
+	cursor: pointer;
+}
+
+.progress-video .progress-color {
+	position: absolute;
+	top: 0;
+
+	background-color: rgba(var(--color-blue));
+	width: 0%;
+	height: 100%;
+}
+
+.progress-video .progress-head {
+	position: absolute;
+	top: -7.5px;
+	right: -10px;
+
+	background-color: rgba(var(--color-blue));
+	width: 20px;
+	height: 20px;
+
+	border-radius: 20px;
+
+	transform: scale(.0);
+	transition: .2s;
+}
+
+.progress-video:hover .progress-head {
+	transform: scale(1.0);
+	transition: .2s;
+}
+
+.progress-video .loading-color {
+	position: absolute;
+	top: 0;
+
+	background-color: rgba(230, 230, 230, .4);
+	width: 2%;
+	height: 100%;
+}
+
+.contenaire-screen .bottom-contenaire .top {
+	height: 46px;
+	display: flex;
+	align-items: center;
+	justify-content: right;
+
+	color: rgba(var(--color-white), .6);
+}
+
+.contenaire-screen .bottom-contenaire .top .title-video {
+	margin-right: 12px;
+}
+
+.contenaire-screen .bottom-contenaire .top .buttonscreen {
+}
+
+
+
+
+.popup-security-entrance {
+	position: absolute;
+	width: 400px;
+
+	box-shadow: 0px 3px 7px rgba(var(--color-SAHDOW), .3);
+	background-color: rgba(var(--color-black), 1.0);
+	color: rgba(var(--color-white));
+
+	z-index: 9999;
+
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.popup-security-entrance ul li {
+	list-style: none;
+	display: inline-block;
+	margin-right: 12px;
+}
+
+.popup-security-entrance .bottom-button {
+	padding: 18px 10px;
+	text-align: center;
+}
+
+.popup-security-entrance .contenaire {
+	padding: 22px 10px;
+}
+
+.popup-security-entrance .contenaire p {
+	color: rgba(var(--color-white), .7);
+	line-height: 1.5em;
+	font-size: 1.02em;
+}
+
+.popup-security-entrance .__IMG {
+	height: 150px;
+	border: none;
+	border-radius:;
+}
